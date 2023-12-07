@@ -8,15 +8,6 @@
     "start": "node src/index.js",
     "dev": "nodemon src/index.js"
   },
-  "vercel": {
-    "functions": "src/*",
-    "builds": [
-      {
-        "src": "",
-        "use": "@vercel/node"
-      }
-    ]
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
