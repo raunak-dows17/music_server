@@ -89,9 +89,11 @@ const UserProfile = async (req, res) => {
     }
 
     res.status(200).json({
+      id: user._id,
       profilePic: user.profilePic,
       username: user.username,
       email: user.email,
+      isAdmin: user.isAdmin,
     });
   } catch (error) {
     console.error(error);
