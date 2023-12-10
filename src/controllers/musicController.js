@@ -21,6 +21,8 @@ const AddMusic = async (req, res) => {
     res
       .status(201)
       .json({ message: "Music added successfully", music: newMusic });
+    
+    console.log(newMusic);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal Server Error" });
@@ -30,7 +32,6 @@ const AddMusic = async (req, res) => {
 const GetOneMusic = async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, artist, album, genre, url } = req.body;
 
     const oneMusic = await Music.findById(
       id

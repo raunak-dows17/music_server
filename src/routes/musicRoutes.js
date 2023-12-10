@@ -17,9 +17,9 @@ const adminMiddleware = require("../middleware/adminMiddleWare");
 
 router.get("/", authMiddleware, getMusic);
 router.get("/:id", authMiddleware, GetOneMusic);
-router.post("/admin/", adminMiddleware, adminMiddleware, AddMusic);
-router.patch("admin/:id", adminMiddleware, adminMiddleware, UpdateMusic);
-router.delete("admin/:id", adminMiddleware, adminMiddleware, deleteMusic);
+router.post("/admin", authMiddleware, adminMiddleware, AddMusic);
+router.patch("/admin/:id", authMiddleware, adminMiddleware, UpdateMusic);
+router.delete("/admin/:id", authMiddleware, adminMiddleware, deleteMusic);
 router.get("/recently-heard", authMiddleware, RecentlyHeard);
 router.get("/playlist/most-heard", authMiddleware, MostHeard);
 router.get("/playlist/genre/", authMiddleware, GenreList);
